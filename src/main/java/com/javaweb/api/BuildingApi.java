@@ -21,10 +21,10 @@ public class BuildingApi {
 		List<BuildingDTO> result = buildingService.findAll(name, district);
 		return result;
 	}
-
+ // delete
 	@DeleteMapping("/api/building/{id}/{name}")
 	public void deleteBuilding(@PathVariable Integer id, @PathVariable String name,
 			@RequestParam(value = "address", required = false) String address) {
-		System.out.println("Da xoa toa nha id " + id + " " + name + " roi nhe");
+		System.out.println("Da xoa toa nha id " + id + " " + name );
 	}
 }
