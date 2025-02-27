@@ -26,6 +26,6 @@ public class BuildingApi {
 	public void deleteBuilding(@PathVariable Integer id, @PathVariable String name,
 			@RequestParam(value = "address", required = false) String address) {
 		System.out.println("Da xoa toa nha id " + id + " " + name );
-		System.out.println("check");
+		
 	}
 }
