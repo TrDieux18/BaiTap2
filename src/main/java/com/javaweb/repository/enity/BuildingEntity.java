@@ -5,6 +5,10 @@ public class BuildingEntity {
 	private String street;
 	private String ward;
 	private Integer numberofbasement;
+	private String district;
+	private Integer floorareaFrom, floorareaTo, rentpriceFrom, rentpriceTo;
+	
+	
 	public String getName() {
 		return name;
 	}

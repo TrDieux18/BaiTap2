@@ -3,7 +3,7 @@ package com.javaweb.api;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+import java.util.Map;
 import com.javaweb.model.BuildingDTO;
 import com.javaweb.service.BuildingService;
 
@@ -15,16 +15,11 @@ public class BuildingApi {
 	private BuildingService buildingService;
 
 	@GetMapping("/api/building/")
-	public List<BuildingDTO> getBuildings(@RequestParam(name = "name", required = false) String name,
-			@RequestParam(name = "district", required = false) String district,
+	public List<BuildingDTO> getBuildings(@RequestParam Map<String, Object> pagrams,
 			@RequestParam(name = "typeCode", required = false) List<String> typeCode){
-		List<BuildingDTO> result = buildingService.findAll(name, district);
+		List<BuildingDTO> result = buildingService.findAll(pagrams);
 		return result;
 	}
- // delete
-	@DeleteMapping("/api/building/{id}/{name}")
-	public void deleteBuilding(@PathVariable Integer id, @PathVariable String name,
-			@RequestParam(value = "address", required = false) String address) {
-		System.out.println("Da xoa toa nha id " + id + " " + name );
-	}
+
+
 }
